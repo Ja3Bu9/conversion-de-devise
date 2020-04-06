@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion De Devise</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Ja3Bu9 Conversion</h1>
+    <div class="form">
+        <div class="form-group">
+            <label>MAD</label>
+            <input placeholder="MAD" class="input" id="mad" type="number">
+        </div>
+
+        <div class="form-group">
+            <label>EURO</label>
+            <input placeholder="EURO" class="input" id="euro" type="number">
+        </div>
+        <div class="form-group">
+            <label>USD</label>
+            <input placeholder="USD" class="input" id="usd" type="number">
+        </div>
+
+
+
+        <script>
+            let mad = document.getElementById("mad");
+            let euro = document.getElementById("euro");
+            let usd = document.getElementById("usd");
+
+            mad.addEventListener("input", function () {
+                convDevise(this.id, this.value);
+            });
+            euro.addEventListener("input", function () {
+                convDevise(this.id, this.value);
+            });
+            usd.addEventListener("input", function () {
+                convDevise(this.id, this.value);
+            });
+
+            function convDevise(id, valeur) {
+                if (id == "mad") {
+                    euro.value = valeur * 0.09;
+                    usd.value = valeur * 0.097;
+                } else if (id == "euro") {
+                    mad.value = valeur * 11.11;
+                    usd.value = valeur * 1.08;
+                } else if (id == "usd") {
+                    mad.value = valeur * 10.30;
+                    euro.value = valeur * 0.93;
+                }
+            }
+        </script>
+
+
+    </div>
+
+
+</body>
+
+</html>
